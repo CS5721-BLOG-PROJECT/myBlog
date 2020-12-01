@@ -18,4 +18,5 @@ public class SystemConfigController {
     public List<Menu> getMenusByHrId() {
         return menuService.getMenusByHrId();
     }
+
 }

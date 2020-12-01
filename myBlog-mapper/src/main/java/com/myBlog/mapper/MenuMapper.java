@@ -5,6 +5,7 @@ import com.myBlog.model.Menu;
 
 import java.util.List;
 
+
 public interface MenuMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -15,7 +16,7 @@ public interface MenuMapper {
     Menu selectByPrimaryKey(Integer id);
 
     int updateByPrimaryKeySelective(Menu record);
-
+    // id->role->menu
     int updateByPrimaryKey(Menu record);
 
     List<Menu> getMenusByHrId(Integer hrid);

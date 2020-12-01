@@ -16,11 +16,11 @@ import java.util.List;
 public class MenuService {
     @Autowired
     MenuMapper menuMapper;
-    @Autowired
+//    @Autowired
 //    MenuRoleMapper menuRoleMapper;
     public List<Menu> getMenusByHrId() {
-        return new ArrayList<Menu>();
-//        return menuMapper.getMenusByHrId(((Hr) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getId());
+//        return new ArrayList<Menu>();
+        return menuMapper.getMenusByHrId(((Hr) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getId());
     }
 
 //    @Cacheable

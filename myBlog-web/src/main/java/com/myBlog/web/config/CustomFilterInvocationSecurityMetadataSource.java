@@ -16,23 +16,23 @@ import java.util.List;
 
 @Component
 public class CustomFilterInvocationSecurityMetadataSource implements FilterInvocationSecurityMetadataSource {
-//    @Autowired
-//    MenuService menuService;
+    @Autowired
+    MenuService menuService;
     AntPathMatcher antPathMatcher = new AntPathMatcher();
     @Override
     public Collection<ConfigAttribute> getAttributes(Object object) throws IllegalArgumentException {
-//        String requestUrl = ((FilterInvocation) object).getRequestUrl();
-//        List<Menu> menus = menuService.getAllMenusWithRole();
-//        for (Menu menu : menus) {
-//            if (antPathMatcher.match(menu.getUrl(), requestUrl)) {
-//                List<Role> roles = menu.getRoles();
-//                String[] str = new String[roles.size()];
-//                for (int i = 0; i < roles.size(); i++) {
-//                    str[i] = roles.get(i).getName();
-//                }
-//                return SecurityConfig.createList(str);
-//            }
-//        }
+        String requestUrl = ((FilterInvocation) object).getRequestUrl();
+        List<Menu> menus = menuService.getAllMenusWithRole();
+        for (Menu menu : menus) {
+            if (antPathMatcher.match(menu.getUrl(), requestUrl)) {
+                List<Role> roles = menu.getRoles();
+                String[] str = new String[roles.size()];
+                for (int i = 0; i < roles.size(); i++) {
+                    str[i] = roles.get(i).getName();
+                }
+                return SecurityConfig.createList(str);
+            }
+        }
         return SecurityConfig.createList("ROLE_LOGIN");
     }
 

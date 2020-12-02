@@ -78,15 +78,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     PrintWriter out = response.getWriter();
                     RespBean respBean = RespBean.error(exception.getMessage());
                     if (exception instanceof LockedException) {
-                        respBean.setMsg("账户被锁定，请联系管理员!");
+                        respBean.setMsg("System error！Please contact your administrator！");
                     } else if (exception instanceof CredentialsExpiredException) {
-                        respBean.setMsg("密码过期，请联系管理员!");
+                        respBean.setMsg("System error！Please contact your administrator！");
                     } else if (exception instanceof AccountExpiredException) {
-                        respBean.setMsg("账户过期，请联系管理员!");
+                        respBean.setMsg("System error！Please contact your administrator！");
                     } else if (exception instanceof DisabledException) {
-                        respBean.setMsg("账户被禁用，请联系管理员!");
+                        respBean.setMsg("System error！Please contact your administrator！");
                     } else if (exception instanceof BadCredentialsException) {
-                        respBean.setMsg("用户名或者密码输入错误，请重新输入!");
+                        respBean.setMsg("System error！Please contact your administrator！");
                     }
                     out.write(new ObjectMapper().writeValueAsString(respBean));
                     out.flush();
@@ -122,7 +122,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutSuccessHandler((req, resp, authentication) -> {
                             resp.setContentType("application/json;charset=utf-8");
                             PrintWriter out = resp.getWriter();
-                            out.write(new ObjectMapper().writeValueAsString(RespBean.ok("注销成功!")));
+                            out.write(new ObjectMapper().writeValueAsString(RespBean.ok("logout success!")));
                             out.flush();
                             out.close();
                         }
@@ -135,9 +135,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                             resp.setContentType("application/json;charset=utf-8");
                             resp.setStatus(401);
                             PrintWriter out = resp.getWriter();
-                            RespBean respBean = RespBean.error("访问失败!");
+                            RespBean respBean = RespBean.error("visit fail!");
                             if (authException instanceof InsufficientAuthenticationException) {
-                                respBean.setMsg("请求失败，请联系管理员!");
+                                respBean.setMsg("The request failed. Please contact your administrator!");
                             }
                             out.write(new ObjectMapper().writeValueAsString(respBean));
                             out.flush();
@@ -149,7 +149,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             resp.setContentType("application/json;charset=utf-8");
             resp.setStatus(401);
             PrintWriter out = resp.getWriter();
-            out.write(new ObjectMapper().writeValueAsString(RespBean.error("您已在另一台设备登录，本次登录已下线!")));
+            out.write(new ObjectMapper().writeValueAsString(RespBean.error("You have login in another machine!")));
             out.flush();
             out.close();
         }), ConcurrentSessionFilter.class);

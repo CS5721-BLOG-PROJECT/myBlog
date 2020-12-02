@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.myBlog.model.Hr;
 import com.myBlog.model.RespBean;
 import com.myBlog.service.HrService;
+import com.myBlog.web.utils.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,6 +25,8 @@ import org.springframework.security.web.session.ConcurrentSessionFilter;
 import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
 
+import static java.lang.Integer.*;
+
 
 @Configuration
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -33,6 +36,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     CustomFilterInvocationSecurityMetadataSource customFilterInvocationSecurityMetadataSource;
     @Autowired
     CustomUrlDecisionManager customUrlDecisionManager;
+
+//    JwtUtil jwtUtil;
 
     @Bean
     PasswordEncoder passwordEncoder() {
@@ -58,6 +63,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                     PrintWriter out = response.getWriter();
                     Hr hr = (Hr) authentication.getPrincipal();
                     hr.setPassword(null);
+                    String token = JwtUtil.createJWT( hr.getId(), hr.getName(), "admin");
+//                    System.out.println(token);
+                    hr.setToken(token);
                     RespBean ok = RespBean.ok("login success!", hr);
                     String s = new ObjectMapper().writeValueAsString(ok);
                     out.write(s);

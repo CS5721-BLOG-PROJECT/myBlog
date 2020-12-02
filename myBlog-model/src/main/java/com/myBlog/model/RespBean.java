@@ -16,7 +16,6 @@ public class RespBean {
     public static RespBean ok(String msg, Object obj) {
         return new RespBean(200, msg, obj);
     }
-
     public static RespBean error(String msg) {
         return new RespBean(500, msg, null);
     }

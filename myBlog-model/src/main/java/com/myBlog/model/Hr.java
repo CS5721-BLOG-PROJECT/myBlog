@@ -31,6 +31,7 @@ public class Hr implements UserDetails {
 
     private String remark;
     private List<Role> roles;
+    private String token;
 
     @Override
     public boolean equals(Object o) {
@@ -59,6 +60,13 @@ public class Hr implements UserDetails {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 
     public String getName() {

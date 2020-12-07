@@ -101,7 +101,7 @@ CREATE TABLE `employee` (
   `departmentId` int(11) DEFAULT NULL COMMENT 'department id',
   `jobLevelId` int(11) DEFAULT NULL COMMENT 'job level ID',
   `posId` int(11) DEFAULT NULL COMMENT 'position ID',
-  `engageForm` varchar(8) DEFAULT NULL COMMENT 'engagement form',
+  `engageForm` varchar(32) DEFAULT NULL COMMENT 'engagement form',
   `tiptopDegree` enum('Phd','master','bachelor','junior college','senior','middle','primary','other') DEFAULT NULL COMMENT 'tip-top degree',
   `specialty` varchar(32) DEFAULT NULL COMMENT 'major',
   `school` varchar(32) DEFAULT NULL COMMENT 'school',

@@ -88,7 +88,7 @@ DROP TABLE IF EXISTS `employee`;
 CREATE TABLE `employee` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'employee num',
   `name` varchar(10) DEFAULT NULL COMMENT 'employee name',
-  `gender` char(4) DEFAULT NULL COMMENT 'employee gender',
+  `gender` char(8) DEFAULT NULL COMMENT 'employee gender',
   `birthday` date DEFAULT NULL COMMENT 'employee birthday',
   `idCard` char(18) DEFAULT NULL COMMENT 'employee id',
   `wedlock` enum('married','unmarried','divorced') DEFAULT NULL COMMENT 'marriage condition',

@@ -101,7 +101,7 @@ CREATE TABLE `employee` (
   `departmentId` int(11) DEFAULT NULL COMMENT 'department id',
   `jobLevelId` int(11) DEFAULT NULL COMMENT 'job level ID',
   `posId` int(11) DEFAULT NULL COMMENT 'position ID',
-  `engageForm` varchar(8) DEFAULT NULL COMMENT 'engagement form',
+  `engageForm` varchar(18) DEFAULT NULL COMMENT 'engagement form',
   `tiptopDegree` enum('Phd','master','bachelor','junior college','senior','middle','primary','other') DEFAULT NULL COMMENT 'tip-top degree',
   `specialty` varchar(32) DEFAULT NULL COMMENT 'major',
   `school` varchar(32) DEFAULT NULL COMMENT 'school',
@@ -262,7 +262,7 @@ CREATE TABLE `joblevel` (
 
 /*Data for the table `joblevel` */
 
-insert  into `joblevel`(`id`,`name`,`titleLevel`,`createDate`,`enabled`) values (9,'professor','senior level','2018-01-11 00:00:00',1),(10,'deputy professor','deputy senior level','2018-01-11 21:19:20',1),(12,'TA','primary level','2018-01-11 21:35:39',1),(13,'teacher','junior level','2018-01-11 00:00:00',0),(14,'primary engineer','primary level','2018-01-14 00:00:00',1),(15,'junior engineer','junior level','2018-01-14 00:00:00',1),(16,'senior engineer','deputy senior level','2018-01-14 16:19:14',1),(17,'high level engineer','senior level','2018-01-14 16:19:24',1);
+insert  into `joblevel`(`id`,`name`,`titleLevel`,`createDate`,`enabled`) values (9,'professor','senior level','2020-11-11 00:00:00',1),(10,'deputy professor','deputy senior level','2020-01-11 21:19:20',1),(12,'TA','primary level','2020-11-11 21:35:39',1),(13,'teacher','junior level','2020-11-11 00:00:00',0),(14,'primary engineer','primary level','2020-11-14 00:00:00',1),(15,'junior engineer','junior level','2020-11-14 00:00:00',1),(16,'senior engineer','deputy senior level','2020-01-14 16:19:14',1),(17,'high level engineer','senior level','2020-01-14 16:19:24',1);
 
 /*Table structure for table `menu` */
 
@@ -321,7 +321,7 @@ CREATE TABLE `msgcontent` (
 
 /*Data for the table `msgcontent` */
 
-insert  into `msgcontent`(`id`,`title`,`message`,`createDate`) values (14,'2222222222','11111111111111111','2018-02-02 20:46:19'),(15,'22222222','3333333333333333333333','2018-02-02 21:45:57'),(16,'notification title1','notification content1','2018-02-03 11:41:39'),(17,'notification title2','notification content2','2018-02-03 11:52:37'),(18,'notification title3','notification content3','2018-02-03 12:19:41');
+insert  into `msgcontent`(`id`,`title`,`message`,`createDate`) values (14,'2222222222','11111111111111111','2020-11-20 20:46:19'),(15,'22222222','3333333333333333333333','2020-11-22 21:45:57'),(16,'notification title1','notification content1','2020-11-23 11:41:39'),(17,'notification title2','notification content2','2020-11-23 11:52:37'),(18,'notification title3','notification content3','2020-11-23 12:19:41');
 
 /*Table structure for table `nation` */
 
@@ -382,7 +382,7 @@ CREATE TABLE `position` (
 
 /*Data for the table `position` */
 
-insert  into `position`(`id`,`name`,`createDate`,`enabled`) values (29,'tech director','2018-01-11 21:13:42',1),(30,'devops director','2018-01-11 21:13:48',1),(31,'marketing director','2018-01-11 00:00:00',1),(33,'developing engineer','2018-01-14 00:00:00',0),(34,'devops engineer','2018-01-14 16:11:41',1),(36,'Java developing engineer','2019-10-01 00:00:00',1);
+insert  into `position`(`id`,`name`,`createDate`,`enabled`) values (29,'tech director','2020-11-11 21:13:42',1),(30,'devops director','2020-11-11 21:13:48',1),(31,'marketing director','2020-01-11 00:00:00',1),(33,'developing engineer','2020-11-14 00:00:00',0),(34,'devops engineer','2020-11-14 16:11:41',1),(36,'Java developing engineer','2019-10-01 00:00:00',1);
 
 /*Table structure for table `role` */
 
@@ -423,7 +423,7 @@ CREATE TABLE `salary` (
 
 /*Data for the table `salary` */
 
-insert  into `salary`(`id`,`basicSalary`,`bonus`,`lunchSalary`,`trafficSalary`,`allSalary`,`pensionBase`,`pensionPer`,`createDate`,`medicalBase`,`medicalPer`,`accumulationFundBase`,`accumulationFundPer`,`name`) values (9,9000,4000,800,500,NULL,2000,0.07,'2018-01-24 00:00:00',2000,0.07,2000,0.07,'marketing salary ledger'),(10,2000,2000,400,1000,NULL,2000,0.07,'2018-01-01 00:00:00',2000,0.07,2000,0.07,'hr salary ledger'),(13,20000,3000,500,500,NULL,4000,0.07,'2018-01-25 00:00:00',4000,0.07,4000,0.07,'devops salary ledger');
+insert  into `salary`(`id`,`basicSalary`,`bonus`,`lunchSalary`,`trafficSalary`,`allSalary`,`pensionBase`,`pensionPer`,`createDate`,`medicalBase`,`medicalPer`,`accumulationFundBase`,`accumulationFundPer`,`name`) values (9,9000,4000,800,500,NULL,2000,0.07,'2020-11-24 00:00:00',2000,0.07,2000,0.07,'marketing salary ledger'),(10,2000,2000,400,1000,NULL,2000,0.07,'2020-11-11 00:00:00',2000,0.07,2000,0.07,'hr salary ledger'),(13,20000,3000,500,500,NULL,4000,0.07,'2020-11-25 00:00:00',4000,0.07,4000,0.07,'devops salary ledger');
 
 /*Table structure for table `sysmsg` */
 

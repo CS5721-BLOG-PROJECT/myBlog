@@ -16,8 +16,10 @@ import java.util.List;
 
 @Service
 public class HrService implements UserDetailsService {
+	
     @Autowired
     HrMapper hrMapper;
+	
     @Autowired
     HrRoleMapper hrRoleMapper;
 

@@ -11,6 +11,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
+
+//this is employeeservice
+
 @Service
 public class EmployeeService {
     @Autowired
@@ -38,6 +41,7 @@ public class EmployeeService {
         int result = employeeMapper.insertSelective(employee);
         if (result == 1) {
             Employee emp = employeeMapper.getEmployeeById(employee.getId());
+            //generate the only id
             String msgId = UUID.randomUUID().toString();
         }
         return result;

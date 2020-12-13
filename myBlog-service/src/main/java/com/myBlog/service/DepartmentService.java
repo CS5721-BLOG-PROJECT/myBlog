@@ -8,11 +8,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+//this is department service
 
 @Service
 public class DepartmentService {
     @Autowired
     DepartmentMapper departmentMapper;
+
     public List<Department> getAllDepartments() {
         return departmentMapper.getAllDepartmentsByParentId(-1);
     }

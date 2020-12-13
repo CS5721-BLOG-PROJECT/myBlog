@@ -8,11 +8,13 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+//this is nationservice
 
 @Service
 public class NationService {
     @Autowired
     NationMapper nationMapper;
+	
     public List<Nation> getAllNations() {
         return nationMapper.getAllNations();
     }

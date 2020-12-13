@@ -446,6 +446,24 @@ CREATE TABLE `sysmsg` (
 
 insert  into `sysmsg`(`id`,`mid`,`type`,`hrid`,`state`) values (57,14,0,3,1),(58,14,0,5,1),(59,14,0,10,1),(60,14,0,11,0),(61,14,0,12,0),(62,15,0,3,1),(63,15,0,5,1),(64,15,0,10,1),(65,15,0,11,0),(66,15,0,12,0),(67,16,0,3,1),(68,16,0,5,1),(69,16,0,10,1),(70,16,0,11,0),(71,16,0,12,0),(72,17,0,3,1),(73,17,0,5,1),(74,17,0,10,1),(75,17,0,11,0),(76,17,0,12,0),(77,18,0,3,1),(78,18,0,5,0),(79,18,0,10,0),(80,18,0,11,0),(81,18,0,12,0);
 
+/*Table structure for table `empsal` */
+
+DROP TABLE IF EXISTS `empsal`;
+CREATE TABLE `empsal`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255)  DEFAULT NULL,
+  `totalWages` int(11) DEFAULT NULL,
+  `dayOff` int(11) DEFAULT NULL,
+  `insuranceFee` int(11) DEFAULT NULL,
+  `deduction` int(11)  DEFAULT NULL,
+  `netSal` int(11)  DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+
+/*Data for the table `empsal` */
+
+INSERT INTO `empsal`(`id`,`name`,`totalWages`,`dayOff`,`insuranceFee`,`deduction`,`netSal`) VALUES (1, 'test', 100, 1, 1, 2, 98),(2, 'test2', 101, 1, 1, 2, 99);
+
 /* Procedure structure for procedure `addDep` */
 
 /*!50003 DROP PROCEDURE IF EXISTS  `addDep` */;

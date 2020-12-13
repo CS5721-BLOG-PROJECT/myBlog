@@ -13,13 +13,16 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+//this is menuservice
 @Service
 @CacheConfig(cacheNames = "menus_cache")
 public class MenuService {
     @Autowired
     MenuMapper menuMapper;
+	
     @Autowired
     MenuRoleMapper menuRoleMapper;
+	
     public List<Menu> getMenusByHrId() {
         return menuMapper.getMenusByHrId(((Hr) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getId());
     }

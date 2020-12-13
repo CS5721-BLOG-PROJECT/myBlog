@@ -16,8 +16,10 @@ import java.util.List;
 
 @Service
 public class HrService implements UserDetailsService {
+	
     @Autowired
     HrMapper hrMapper;
+	
     @Autowired
     HrRoleMapper hrRoleMapper;
 
@@ -25,7 +27,7 @@ public class HrService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Hr hr = hrMapper.loadUserByUsername(username);
         if (hr == null) {
-            throw new UsernameNotFoundException("用户名不存在!");
+            throw new UsernameNotFoundException("user name don't exit!");
         }
         hr.setRoles(hrMapper.getHrRolesById(hr.getId()));
         return hr;

@@ -10,12 +10,12 @@ import java.util.Date;
 
 public class JwtUtil {
 
-    private static String key="cs4125project"; //密钥加盐
+    private static String key="cs4125project"; //secret key
 
-    private static long ttl=3600*24*1000;   //过期时间
+    private static long ttl=3600*24*1000;   //expiration
 
     /**
-     * 生成JWT
+     * generate JWT
      */
     public static String createJWT(Integer id, String subject, String role) {
         long nowMillis = System.currentTimeMillis();
@@ -31,7 +31,7 @@ public class JwtUtil {
     }
 
     /**
-     * 解析JWT
+     * parse JWT
      */
     public static Claims parseJWT(String jwtStr) {
         return Jwts.parser()

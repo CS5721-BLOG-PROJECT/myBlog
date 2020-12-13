@@ -3,7 +3,6 @@ package com.myBlog.web.controller;
 import com.myBlog.model.Hr;
 import com.myBlog.model.RespBean;
 import com.myBlog.service.HrService;
-import com.myBlog.web.config.FastDFSUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -32,9 +31,9 @@ public class HrInfoController {
     public RespBean updateHr(@RequestBody Hr hr, Authentication authentication) {
         if (hrService.updateHr(hr) == 1) {
             SecurityContextHolder.getContext().setAuthentication(new UsernamePasswordAuthenticationToken(hr, authentication.getCredentials(), authentication.getAuthorities()));
-            return RespBean.ok("更新成功!");
+            return RespBean.ok("update success!");
         }
-        return RespBean.error("更新失败!");
+        return RespBean.error("update fail!");
     }
 
     @PutMapping("/hr/pass")
@@ -43,22 +42,11 @@ public class HrInfoController {
         String pass = (String) info.get("pass");
         Integer hrid = (Integer) info.get("hrid");
         if (hrService.updateHrPasswd(oldpass, pass, hrid)) {
-            return RespBean.ok("更新成功!");
+            return RespBean.ok("update success!");
         }
-        return RespBean.error("更新失败!");
+        return RespBean.error("update fail!");
     }
 
-//    @PostMapping("/hr/userface")
-//    public RespBean updateHrUserface(MultipartFile file, Integer id, Authentication authentication) {
-//        String fileId = FastDFSUtils.upload(file);
-//        String url = nginxHost + fileId;
-//        if (hrService.updateUserface(url, id) == 1) {
-//            Hr hr = (Hr) authentication.getPrincipal();
-//            hr.setUserface(url);
-//            SecurityContextHolder.getContext().setAuthentication(new UsernamePasswordAuthenticationToken(hr, authentication.getCredentials(), authentication.getAuthorities()));
-//            return RespBean.ok("更新成功!", url);
-//        }
-//        return RespBean.error("更新失败!");
-//    }
+
 
 }

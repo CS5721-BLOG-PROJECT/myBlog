@@ -20,7 +20,7 @@ public class CustomUrlDecisionManager implements AccessDecisionManager {
             String needRole = configAttribute.getAttribute();
             if ("ROLE_LOGIN".equals(needRole)) {
                 if (authentication instanceof AnonymousAuthenticationToken) {
-                    throw new AccessDeniedException("尚未登录，请登录!");
+                    throw new AccessDeniedException("haven't login, please login first!");
                 }else {
                     return;
                 }
@@ -32,7 +32,7 @@ public class CustomUrlDecisionManager implements AccessDecisionManager {
                 }
             }
         }
-        throw new AccessDeniedException("权限不足，请联系管理员!");
+        throw new AccessDeniedException("Insufficient permissions, please contact your admin!");
     }
 
     @Override

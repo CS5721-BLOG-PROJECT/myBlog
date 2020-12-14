@@ -9,8 +9,11 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.List;
 
+
+//this is joblevelservice
 @Service
 public class JobLevelService {
+	
     @Autowired
     JobLevelMapper jobLevelMapper;
 

@@ -88,7 +88,7 @@ DROP TABLE IF EXISTS `employee`;
 CREATE TABLE `employee` (
   `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'employee num',
   `name` varchar(10) DEFAULT NULL COMMENT 'employee name',
-  `gender` char(4) DEFAULT NULL COMMENT 'employee gender',
+  `gender` char(8) DEFAULT NULL COMMENT 'employee gender',
   `birthday` date DEFAULT NULL COMMENT 'employee birthday',
   `idCard` char(18) DEFAULT NULL COMMENT 'employee id',
   `wedlock` enum('married','unmarried','divorced') DEFAULT NULL COMMENT 'marriage condition',
@@ -101,7 +101,7 @@ CREATE TABLE `employee` (
   `departmentId` int(11) DEFAULT NULL COMMENT 'department id',
   `jobLevelId` int(11) DEFAULT NULL COMMENT 'job level ID',
   `posId` int(11) DEFAULT NULL COMMENT 'position ID',
-  `engageForm` varchar(8) DEFAULT NULL COMMENT 'engagement form',
+  `engageForm` varchar(32) DEFAULT NULL COMMENT 'engagement form',
   `tiptopDegree` enum('Phd','master','bachelor','junior college','senior','middle','primary','other') DEFAULT NULL COMMENT 'tip-top degree',
   `specialty` varchar(32) DEFAULT NULL COMMENT 'major',
   `school` varchar(32) DEFAULT NULL COMMENT 'school',
@@ -262,7 +262,7 @@ CREATE TABLE `joblevel` (
 
 /*Data for the table `joblevel` */
 
-insert  into `joblevel`(`id`,`name`,`titleLevel`,`createDate`,`enabled`) values (9,'professor','senior level','2018-01-11 00:00:00',1),(10,'deputy professor','deputy senior level','2018-01-11 21:19:20',1),(12,'TA','primary level','2018-01-11 21:35:39',1),(13,'teacher','junior level','2018-01-11 00:00:00',0),(14,'primary engineer','primary level','2018-01-14 00:00:00',1),(15,'junior engineer','junior level','2018-01-14 00:00:00',1),(16,'senior engineer','deputy senior level','2018-01-14 16:19:14',1),(17,'high level engineer','senior level','2018-01-14 16:19:24',1);
+insert  into `joblevel`(`id`,`name`,`titleLevel`,`createDate`,`enabled`) values (9,'professor','senior level','2020-11-11 00:00:00',1),(10,'deputy professor','deputy senior level','2020-01-11 21:19:20',1),(12,'TA','primary level','2020-11-11 21:35:39',1),(13,'teacher','junior level','2020-11-11 00:00:00',0),(14,'primary engineer','primary level','2020-11-14 00:00:00',1),(15,'junior engineer','junior level','2020-11-14 00:00:00',1),(16,'senior engineer','deputy senior level','2020-01-14 16:19:14',1),(17,'high level engineer','senior level','2020-01-14 16:19:24',1);
 
 /*Table structure for table `menu` */
 
@@ -321,7 +321,7 @@ CREATE TABLE `msgcontent` (
 
 /*Data for the table `msgcontent` */
 
-insert  into `msgcontent`(`id`,`title`,`message`,`createDate`) values (14,'2222222222','11111111111111111','2018-02-02 20:46:19'),(15,'22222222','3333333333333333333333','2018-02-02 21:45:57'),(16,'notification title1','notification content1','2018-02-03 11:41:39'),(17,'notification title2','notification content2','2018-02-03 11:52:37'),(18,'notification title3','notification content3','2018-02-03 12:19:41');
+insert  into `msgcontent`(`id`,`title`,`message`,`createDate`) values (14,'2222222222','11111111111111111','2020-11-20 20:46:19'),(15,'22222222','3333333333333333333333','2020-11-22 21:45:57'),(16,'notification title1','notification content1','2020-11-23 11:41:39'),(17,'notification title2','notification content2','2020-11-23 11:52:37'),(18,'notification title3','notification content3','2020-11-23 12:19:41');
 
 /*Table structure for table `nation` */
 
@@ -382,7 +382,7 @@ CREATE TABLE `position` (
 
 /*Data for the table `position` */
 
-insert  into `position`(`id`,`name`,`createDate`,`enabled`) values (29,'tech director','2018-01-11 21:13:42',1),(30,'devops director','2018-01-11 21:13:48',1),(31,'marketing director','2018-01-11 00:00:00',1),(33,'developing engineer','2018-01-14 00:00:00',0),(34,'devops engineer','2018-01-14 16:11:41',1),(36,'Java developing engineer','2019-10-01 00:00:00',1);
+insert  into `position`(`id`,`name`,`createDate`,`enabled`) values (29,'tech director','2020-11-11 21:13:42',1),(30,'devops director','2020-11-11 21:13:48',1),(31,'marketing director','2020-01-11 00:00:00',1),(33,'developing engineer','2020-11-14 00:00:00',0),(34,'devops engineer','2020-11-14 16:11:41',1),(36,'Java developing engineer','2019-10-01 00:00:00',1);
 
 /*Table structure for table `role` */
 
@@ -423,7 +423,7 @@ CREATE TABLE `salary` (
 
 /*Data for the table `salary` */
 
-insert  into `salary`(`id`,`basicSalary`,`bonus`,`lunchSalary`,`trafficSalary`,`allSalary`,`pensionBase`,`pensionPer`,`createDate`,`medicalBase`,`medicalPer`,`accumulationFundBase`,`accumulationFundPer`,`name`) values (9,9000,4000,800,500,NULL,2000,0.07,'2018-01-24 00:00:00',2000,0.07,2000,0.07,'marketing salary ledger'),(10,2000,2000,400,1000,NULL,2000,0.07,'2018-01-01 00:00:00',2000,0.07,2000,0.07,'hr salary ledger'),(13,20000,3000,500,500,NULL,4000,0.07,'2018-01-25 00:00:00',4000,0.07,4000,0.07,'devops salary ledger');
+insert  into `salary`(`id`,`basicSalary`,`bonus`,`lunchSalary`,`trafficSalary`,`allSalary`,`pensionBase`,`pensionPer`,`createDate`,`medicalBase`,`medicalPer`,`accumulationFundBase`,`accumulationFundPer`,`name`) values (9,9000,4000,800,500,NULL,2000,0.07,'2020-11-24 00:00:00',2000,0.07,2000,0.07,'marketing salary ledger'),(10,2000,2000,400,1000,NULL,2000,0.07,'2020-11-11 00:00:00',2000,0.07,2000,0.07,'hr salary ledger'),(13,20000,3000,500,500,NULL,4000,0.07,'2020-11-25 00:00:00',4000,0.07,4000,0.07,'devops salary ledger');
 
 /*Table structure for table `sysmsg` */
 
@@ -445,6 +445,24 @@ CREATE TABLE `sysmsg` (
 /*Data for the table `sysmsg` */
 
 insert  into `sysmsg`(`id`,`mid`,`type`,`hrid`,`state`) values (57,14,0,3,1),(58,14,0,5,1),(59,14,0,10,1),(60,14,0,11,0),(61,14,0,12,0),(62,15,0,3,1),(63,15,0,5,1),(64,15,0,10,1),(65,15,0,11,0),(66,15,0,12,0),(67,16,0,3,1),(68,16,0,5,1),(69,16,0,10,1),(70,16,0,11,0),(71,16,0,12,0),(72,17,0,3,1),(73,17,0,5,1),(74,17,0,10,1),(75,17,0,11,0),(76,17,0,12,0),(77,18,0,3,1),(78,18,0,5,0),(79,18,0,10,0),(80,18,0,11,0),(81,18,0,12,0);
+
+/*Table structure for table `empsal` */
+
+DROP TABLE IF EXISTS `empsal`;
+CREATE TABLE `empsal`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255)  DEFAULT NULL,
+  `totalWages` int(11) DEFAULT NULL,
+  `dayOff` int(11) DEFAULT NULL,
+  `insuranceFee` int(11) DEFAULT NULL,
+  `deduction` int(11)  DEFAULT NULL,
+  `netSal` int(11)  DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+
+/*Data for the table `empsal` */
+
+INSERT INTO `empsal`(`id`,`name`,`totalWages`,`dayOff`,`insuranceFee`,`deduction`,`netSal`) VALUES (1, 'test', 100, 1, 1, 2, 98),(2, 'test2', 101, 1, 1, 2, 99);
 
 /* Procedure structure for procedure `addDep` */
 

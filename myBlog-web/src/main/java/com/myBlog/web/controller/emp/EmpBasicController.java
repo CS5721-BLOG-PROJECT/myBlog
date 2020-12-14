@@ -33,25 +33,25 @@ public class EmpBasicController {
     @PostMapping("/")
     public RespBean addEmp(@RequestBody Employee employee) {
         if (employeeService.addEmp(employee) == 1) {
-            return RespBean.ok("添加成功!");
+            return RespBean.ok("Added successfully!");
         }
-        return RespBean.error("添加失败!");
+        return RespBean.error("Add failed!");
     }
 
     @DeleteMapping("/{id}")
     public RespBean deleteEmpByEid(@PathVariable Integer id) {
         if (employeeService.deleteEmpByEid(id) == 1) {
-            return RespBean.ok("删除成功!");
+            return RespBean.ok("Deletion succeeded!");
         }
-        return RespBean.error("删除失败!");
+        return RespBean.error("Deletion failed!");
     }
 
     @PutMapping("/")
     public RespBean updateEmp(@RequestBody Employee employee) {
         if (employeeService.updateEmp(employee) == 1) {
-            return RespBean.ok("更新成功!");
+            return RespBean.ok("Update succeeded!");
         }
-        return RespBean.error("更新失败!");
+        return RespBean.error("Update failed!");
     }
 
     @GetMapping("/nations")
